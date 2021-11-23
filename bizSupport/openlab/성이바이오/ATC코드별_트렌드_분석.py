@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from bizSupport.config.config import common_path_mac
 
 
 def all_data_merge():
@@ -8,8 +9,11 @@ def all_data_merge():
     atc_code_dict = {'A02': 'N06DA02', 'A03': 'N06DA03',
                      'A04': 'N06DA04',
                      'X01': 'N06DX01', 'X02': 'N07AX02'}
-    path1 = '/home/seongeun/PycharmProjects/dataVisualization/bizSupport/openlab/성이바이오/data/2648135854_비즈데이터_RESULT_{atc_cd}.txt'
-    path2 = '/home/seongeun/PycharmProjects/dataVisualization/bizSupport/openlab/성이바이오/data/2648135854_비즈데이터_RESULT_{atc_cd}_1026.txt'
+
+    path1 = '/Users/imac/PycharmProjects/dataVisualization/bizSupport/openlab/성이바이오/data/2648135854_비즈데이터_RESULT_{atc_cd}.txt'
+    path2 = '/Users/imac/PycharmProjects/dataVisualization/bizSupport/openlab/성이바이오/data/2648135854_비즈데이터_RESULT_{atc_cd}_1026.txt'
+
+
     res = []
     for atc_cd in names:
         for path in [path1, path2]:
@@ -84,32 +88,32 @@ def main():
     )
 
     fig.layout.yaxis.title.standoff = 0.2
-
-    tick_vals = ['201906', '201909', '201912',
-                 '202003', '202006', '202009', '202012',
-                 '202103'],
-    tick_text = ['2019년 06월', '9월', '12월',
-                 '2020년 03월', '6월', '9월', '12월',
-                 '2021년 03월']
-
-    fig.update_layout(
-        xaxis3=dict(
-            tickmode='array',
-            tickvals=tick_vals,
-            ticktext=tick_text
-        ))
-
-    fig.update_layout(
-        xaxis4=dict(
-            tickmode='array',
-            tickvals=tick_vals,
-            ticktext=tick_text
-        ))
+    #
+    # tick_vals = ['201906', '201909', '201912',
+    #              '202003', '202006', '202009', '202012',
+    #              '202103'],
+    # tick_text = ['2019년 06월', '9월', '12월',
+    #              '2020년 03월', '6월', '9월', '12월',
+    #              '2021년 03월']
+    #
+    # fig.update_layout(
+    #     xaxis3=dict(
+    #         tickmode='array',
+    #         tickvals=tick_vals,
+    #         ticktext=tick_text
+    #     ))
+    #
+    # fig.update_layout(
+    #     xaxis4=dict(
+    #         tickmode='array',
+    #         tickvals=tick_vals,
+    #         ticktext=tick_text
+    #     ))
 
     file_name = 'ATC코드별_트렌드분석'
-    # fig.write_html(full_html=True, file=f'{file_name}.html')
-    # fig.write_image(format='png', file=f'{file_name}.png')
-    fig.show()
+    fig.write_html(full_html=True, file=f'{file_name}.html')
+    fig.write_image(format='png', file=f'{file_name}.png')
+    # fig.show()
     return 0
 
 

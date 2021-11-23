@@ -9,3 +9,4 @@ DEV_CONFIG = {
 }
 
 common_path = '/home/seongeun/PycharmProjects/dataVisualization'
+common_path_mac = '/Users/imac/PycharmProjects/dataVisualization'
