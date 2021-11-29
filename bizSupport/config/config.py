@@ -8,5 +8,5 @@ DEV_CONFIG = {
     'password': '!qazxsw2'
 }
 
-common_path = '/home/seongeun/PycharmProjects/dataVisualization'
+common_path_linux = '/home/seongeun/PycharmProjects/dataVisualization'
 common_path_mac = '/Users/imac/PycharmProjects/dataVisualization'
